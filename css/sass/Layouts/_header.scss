@@ -1,0 +1,45 @@
+.header{
+	position: relative;
+	height: 95vh;
+	/*You can specify multiple background images separated by a coma. The one written first will be given priority*/
+	background-image: linear-gradient(to right bottom,rgba($color-primary-light,0.8),rgba($color-primary-dark,0.8)) , url(../img/hero-small.jpg);
+	background-size: cover; /* Used to fit image inside it's parent object's specified width*/
+	background-position: top;
+	/*For the slant. Use clip-path to define a polygon with the four edges where you want that element to be visible*/
+	-webkit-clip-path: polygon(0 0,100% 0,100% 75vh,0 100%);
+	clip-path: polygon(0 0,100% 0,100% 75vh,0 100%);
+
+	@media only screen and (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+		background-image: linear-gradient(to right bottom,rgba($color-primary-light,0.8),rgba($color-primary-dark,0.8)) , 
+		url(../img/hero.jpg);
+	}
+
+	@include respond(phone){
+		clip-path: polygon(0 0,100% 0,100% 85vh,0 100%);
+	}
+
+	&__logo-box{
+		position: absolute;
+		top: 4rem;
+		left: 4rem;
+	} 
+
+	&__logo{
+		height: 3.5rem;
+	}
+
+	&__main-box{
+		position: absolute;
+		top: 40%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		/*Above 3  lines are used for centering the element*/
+		text-align: center;
+	}
+}
+
+/*.header__logo-box{
+	position: absolute;
+	top: 4rem;
+	left: 4rem;
+}*/

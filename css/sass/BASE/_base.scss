@@ -1,0 +1,44 @@
+*,
+*::after,
+*::before{
+	/*Performing a basic reset*/
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+	
+}
+
+
+html{
+	font-size: 62.5%;
+	/*So basically now 1 rem = 10px. 62.5% of 16px is 10px.*/
+
+	@include respond(big-desktop){
+		font-size: 75%;
+		/*So basically now 1 rem = 12px.*/
+	}
+
+	@include respond(tab-land){
+		font-size: 56.25%;
+		/*So basically now 1 rem = 9px.*/
+	}
+
+	@include respond(tab-port){
+		font-size: 50% 
+		/*So basically now 1 rem = 8px.*/
+	}
+}
+
+body{
+	padding: 3rem;
+
+	@include respond(tab-port){
+		padding: 0;
+	}
+}
+
+::selection{
+	background-color: $color-primary;
+	color: $color-white;
+}
+
